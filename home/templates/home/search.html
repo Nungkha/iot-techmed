@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1> List of searched patients </h1>
+<h2>{{params.name}}</h2>
+
+<div class="container border my-5 fs-2">
+<table class="table table-hover">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Gender</th>
+        <th>Age</th>
+        <th>Contact</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for patient in searchedPatient %}
+        <tr>
+            <td>{{patient.id}}</td>
+            <td><a class="text-dark list" href="{% url 'patient_detail' pk=patient.id %}">{{patient.name}}</a></td>
+            <td>{{patient.gender}}</td>
+            <td>{{patient.age}}</td>
+            <td>{{patient.contact}}</td>
+        </tr>
+        {% endfor %}
+
+    </tbody>
+  </table>
+</div>
+{% endblock content %}
+
+

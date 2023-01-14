@@ -1,0 +1,32 @@
+{% extends 'base2.html' %}
+{% comment %} {% load crispy_forms_tags %} {% endcomment %}
+
+{% block content %}
+<div class="d-flex align-items-center justify-content-center" style="height: 80vh;">
+    <div class='container border border-secondary rounded p-5' style='width: auto;'>
+    {% comment %} <div class=" text-center"> {% endcomment %}
+        <h1 class=" text-center p-2">TechMed</h1>
+        <br>
+
+    <div class='content-section'>
+        <form method='POST'>
+            {% csrf_token %}
+            <fieldset class='form-group'>
+                {{ form.as_p }}
+                {% comment %} {{ form | crispy }} {% endcomment %}
+            </fieldset>
+            <div class='form-group text-center py-4'>
+                <button class='btn btn-primary' type='submit'>Sign Up</button>
+            </div>
+        </form>
+        <div class='border-top  text-center pt-3'>
+            <small class='text-muted'>
+                Already have an account? <a class='ml-2' href='{% url 'login' %}'>Sign In</a>
+            </small>
+        </div>
+        </form>
+    </div>
+    </div>
+    </div>
+    </div>
+{% endblock content %}

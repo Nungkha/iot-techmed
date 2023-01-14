@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+<script src="{% url 'js-catlog' %}"></script>
+<script src="{% static '/admin/js/core.js' %}"></script>
+<link rel="stylesheet" href="{% static 'admin/css/base.css' %}" >
+<link rel="stylesheet" href="{% static 'admin/css/widget.css' %}" >
+
+
+<div class="container border fs-4">
+
+
+    <form method="POST" class="p-3">
+        {% csrf_token %}
+        {{ form.media }}
+        {{form.as_p}}
+
+
+{% comment %} prescription form {% endcomment %}
+        {% comment %} <div class='container-sm'>
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                    <button class='nav-link' data-bs-toggle='tab' id='med1-tab' type='button' data-bs-target='#med1'
+                        role='tab' aria-controls='med' aria-selected='true'>Med1</button>
+                </li>
+                <li class="nav-item">
+                    <button class='nav-link' data-bs-toggle='tab' id='med2-tab' type='button' data-bs-target='#med2'
+                        role='tab' aria-controls='med' aria-selected='true'>Med2</button>
+                </li>
+                <li class="nav-item">
+                    <button class='nav-link' data-bs-toggle='tab' id='med3-tab' type='button' data-bs-target='#med3'
+                        role='tab' aria-controls='med' aria-selected='true'>Med3</button>
+                </li>
+                
+            </ul>
+        
+            <div class='tab-content'>
+                <div class='tab-pane fade show' role='tabpanel' id='med1' aria-labelledby='med1-tab'>
+                    <h3>Medicine 1</h3>
+                    <input 
+                    <p>This is a first medicine that you must take everyday.</p>
+                </div>
+                <div class='tab-pane fade show' role='tabpanel' id='med2' aria-labelledby='med2-tab'>
+                    <h3>Medicine 2</h3>
+                    <p>This is a second medicine that you must take everyday. </p>
+                </div>
+                <div class='tab-pane fade show' role='tabpanel' id='med3' aria-labelledby='med3-tab'>
+                    <h3>Medicine 3</h3>
+                    <p>This is a third medicine that you must take everyday.</p>
+                </div>
+            </div>
+        </div> {% endcomment %}
+
+        <button type="submit" class="btn btn-primary m-4">Add</button>
+        <a href="{% url 'patient_list' %}" class="btn btn-primary">Cancel</a>
+    </form>
+</div>
+
+
+{% comment %}  {% endcomment %}
+
+
+
+{% endblock content %}

@@ -1,0 +1,16 @@
+
+.list {
+    text-decoration: none 
+}
+
+
+.list:hover{
+    /* text-decoration: underline; */
+    text-decoration: underline;
+}
+
+
+
+nav {
+	height: 100px;
+}

@@ -1,0 +1,1 @@
+web gunicorn IOT.wsgi:application --log-file -

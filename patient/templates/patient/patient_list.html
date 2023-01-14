@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1> List of all patients </h1>
+{% comment %} <div class='row g-2'>
+        {% for patient in patient  %}
+        <div class="row">
+            <div class="p-3">
+                <a href="{% url 'patient_detail' pk=patient.id %}" class="text-decoration-none text-dark"><h3>{{ patient.name }}</h3></a>
+            </div>
+        </div>
+        {% endfor %}
+</div>  {% endcomment %}
+
+
+<div class="container border my-5 fs-2">
+<table class="table table-hover">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Gender</th>
+        <th>Age</th>
+        <th>Contact</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for patient in patients  %}
+        <tr>
+            <td>{{patient.id}}</td>
+            <td><a class="text-dark list" href="{% url 'patient_detail' pk=patient.id %}">{{patient.name}}</a></td>
+            <td>{{patient.gender}}</td>
+            <td>{{patient.age}}</td>
+            <td>{{patient.contact}}</td>
+        </tr>
+        {% endfor %}
+
+    </tbody>
+  </table>
+</div>
+{% endblock content %}
+
+

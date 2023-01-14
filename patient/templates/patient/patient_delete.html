@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form method="POST" class="fs-3">
+    {% csrf_token %}
+    <p>This action can't be undone.</p>
+    <p>Are you sure you want to delete profile of {{ patient.name }} ?</p>
+
+    <input type="submit" class="btn btn-danger" value="Confirm"/>
+
+{% endblock content %}
