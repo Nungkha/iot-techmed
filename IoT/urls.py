@@ -20,6 +20,9 @@ from home import views
 from users import views as user_view
 from django.conf.urls import url
 from django.views.static import serve
+from django.conf.urls.static import static
+
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
