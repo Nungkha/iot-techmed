@@ -18,8 +18,6 @@ from django.urls import path, include
 from django.conf import settings
 from home import views
 from users import views as user_view
-from django.conf.urls import url
-from django.views.static import serve
 from django.conf.urls.static import static
 
 
@@ -30,9 +28,6 @@ urlpatterns = [
     path('patient/', include('patient.urls')),
     # path('api', include('patient.urls')),
     path('register/', user_view.register, name='register'),
-
-    url(r'^media/?P<path.*)$',serve,{'ocument_root': settings.MEDIA_ROOT}),
-    url(r'^static/?P<path.*)$',serve,{'ocument_root': settings.STATIC_ROOT}),
 
 
 ]
