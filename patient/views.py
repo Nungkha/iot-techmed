@@ -13,6 +13,14 @@ from rest_framework import viewsets
 #     queryset = Patient.objects.values_list('routine', flat =True)
 #     serializer_class = RoutineSerarilizer
 
+
+class medTakenView(ListView):
+    model = Patient
+    context_object_name = 'patients'
+    template_name = 'patient/medTaken.html'
+    # login_url = '/admin'
+    # success_url = '/patient'
+
 def routine_list(request):
     name = Patient.objects.filter(name='Utsana').values()
     # print(dir(name))

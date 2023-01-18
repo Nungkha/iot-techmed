@@ -28,6 +28,8 @@ class Patient(models.Model):
     medicine_description = models.TextField(blank=True, null=True)
     routine = models.TimeField(auto_now_add=False, blank=True, null=True)
     dose = models.IntegerField(default='0')
+    # medicine_taken = models.DateTimeField(auto_now_add=False, blank=True, null=True)
+    refil = models.CharField(max_length=100, blank=True, null=True)
 
     def __str__(self):
         return self.name

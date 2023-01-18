@@ -8,13 +8,14 @@
     <div class="row row-cols2 g-2">
         <div class="col p-3">
             <p>Name: {{patient.name}}</p>
-            <p>Contact: {{patient.contact}}</p>
+            <p>Age: {{patient.age}}</p>
+            <p>Gender: {{patient.gender}}</p>
             <p>Address: {{patient.address}}</p>
             <p>Consultant: Hospital</p>
         </div>
         <div class="col p-2">
-            <p>Age: {{patient.age}}</p>
-            <p>Gender: {{patient.gender}}</p>
+            <p>Date: {{patient.enroll}}</p>
+            <p>Contact: {{patient.contact}}</p>
             <p>Guardina Name: {{patient.guardian_name}}</p>
             <p>Guardian Contact: {{patient.guardian_contact}}</p>
             
@@ -26,6 +27,9 @@
         <h4>Medicine: {{patient.medicine_description}}</h4>
         <h4>Routine: {{patient.routine}}</h4>
         <h4>Dose: {{patient.dose}}</h4>
+        {% comment %} refil request from arduino {% endcomment %}
+        <h4>Refil: {{patient.dose}}</h4>
+
     </div>
     {% comment %} <ul>
         <li>{{patient.name}}</li>
@@ -39,5 +43,6 @@
 <a href="{% url 'patient_list' %}" class="btn btn-secondary m-4">Back</a>
 <a href="{% url 'patient_update' pk=patient.id %}" class="btn btn-secondary">Edit</a>
 <a href="{% url 'patient_delete' pk=patient.id %}" class="btn btn-danger m-4">Delete</a>
+<a href="{% url 'med_taken' pk=patient.id %}" class="btn btn-secondary m-4">Medicine Taken</a>
 
 {% endblock content %}
